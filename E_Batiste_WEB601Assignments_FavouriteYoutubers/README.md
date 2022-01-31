@@ -1,5 +1,5 @@
 Eric Batiste
-
+Angular project/assignment application of my favourite youtubers.
 
 
 
