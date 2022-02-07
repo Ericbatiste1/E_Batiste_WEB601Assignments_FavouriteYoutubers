@@ -1,1 +1,6 @@
-<p>content-list works!</p>
+<div class="title">{{ contentItem ? contentItem.title : "" }}</div>
+<div class="description">{{ contentItem ? contentItem.description : "" }}</div>
+<div><img [src]="contentItem ? contentItem.imgURL : ''"></div>
+<div class="creator">{{ contentItem ? contentItem.creator : "" }}</div>
+<div class="type">{{ contentItem ? contentItem.type : "" }}</div>
+
