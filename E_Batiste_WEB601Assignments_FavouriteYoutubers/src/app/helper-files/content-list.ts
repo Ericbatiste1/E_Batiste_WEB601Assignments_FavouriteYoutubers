@@ -1,4 +1,4 @@
-import {Content} from "./content-interface"
+import {Content} from "../helper-files/content-interface";
 
 export class ContentList {
 
