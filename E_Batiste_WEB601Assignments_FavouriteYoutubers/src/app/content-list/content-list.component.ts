@@ -18,7 +18,7 @@ export class ContentListComponent  {
       title: "PewDiePie",
       description: "Most famous youtuber in subscriptions.",
       creator: "Himself",
-      imgURL: "https://i.guim.co.uk/img/media/9d9759a25269ff4dd7f4c41bde320c4928bdfb65/0_24_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e4916223d76a56180788e7bfc1d25b02",
+      imgURL: "https://static.onecms.io/wp-content/uploads/sites/20/2016/12/pewdiepie-435.jpg",
       type: "Youtube"
     },
     {
@@ -34,7 +34,7 @@ export class ContentListComponent  {
       title: "Tyler1",
       description: "Gaming youtuber/streamer.",
       creator: "Himself",
-      imgURL: "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/0a/NA_Tyler1_2019_AS.png/revision/latest/scale-to-width-down/220?cb=20201010055827",
+      imgURL: "https://celebily.com/wp-content/uploads/2020/04/Tyler1-Bio.jpg",
       type: "Streamer"
     },
     {
