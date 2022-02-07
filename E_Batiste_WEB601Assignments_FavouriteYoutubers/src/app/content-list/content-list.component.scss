@@ -1,0 +1,17 @@
+:host{
+    width: 400px;
+    border: 1px solid blue;
+    display: block;
+    padding: 20px;
+    img{
+        width: 200px;
+    }
+    
+  }
+  
+  :host.is-first{
+    border: 2px solid black;
+    display: block;
+    padding: 20px;
+  }
+
