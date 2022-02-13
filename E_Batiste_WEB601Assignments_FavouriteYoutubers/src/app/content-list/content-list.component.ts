@@ -55,6 +55,8 @@ export class ContentListComponent  {
     }];
   }
 
-
+  imageClicked(): void {
+    console.log("ID: ", this.contentItem?.id, ", Title: ", this.contentItem?.title);
+  }
 
 }
