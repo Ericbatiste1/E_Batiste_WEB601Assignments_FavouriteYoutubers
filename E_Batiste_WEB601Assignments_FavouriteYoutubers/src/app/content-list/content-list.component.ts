@@ -9,6 +9,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent  {
+  title = 'Top YouTubers';
   @Input() contentItem?: Content;
 
   constructor() { 
