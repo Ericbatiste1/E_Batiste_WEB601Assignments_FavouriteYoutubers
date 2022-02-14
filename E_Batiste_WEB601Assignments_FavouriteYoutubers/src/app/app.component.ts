@@ -62,6 +62,26 @@ export class AppComponent {
       type: "Youtube",
       tags: ["Group", "UK"],
       subscriberNumber: 14300000
+    },
+    {
+      id: 5,
+      title: "hJune",
+      description: "Streamer/youtuber.",
+      creator: "Himself",
+      imgURL: "https://yt3.ggpht.com/ytc/AKedOLTUOWf8oIrT8ysdH50UKufolkN-vDK-PekH5LunFA=s900-c-k-c0x00ffffff-no-rj",
+      type: "Streamer",
+      tags: ["Rust", "League", "OfflineTV"],
+      subscriberNumber: 421000
+    },
+    {
+      id: 6,
+      title: "Shroud",
+      description: "Twitch Streamer",
+      creator: "Himself",
+      imgURL: "https://www.dexerto.com/wp-content/uploads/2021/09/03/Dexerto-Header-3.jpg",
+      type: "Streamer",
+      tags: ["Pro Player", "CSGO", "Valorant", "Warzone"],
+      subscriberNumber: 6800000
     }];
 }
 
