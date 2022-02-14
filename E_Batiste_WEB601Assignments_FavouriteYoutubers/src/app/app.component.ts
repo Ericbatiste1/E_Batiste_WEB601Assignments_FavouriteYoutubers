@@ -21,9 +21,7 @@ export class AppComponent {
       creator: "Himself",
       imgURL: "https://static.onecms.io/wp-content/uploads/sites/20/2016/12/pewdiepie-435.jpg",
       type: "Youtube",
-      tags: ["GOAT", "1 Subscribers"],
-      subscriberNumber: 111000000
-      
+      tags: ["GOAT", "1 Subscribers"]
     },
     {
       id: 1,
@@ -32,8 +30,7 @@ export class AppComponent {
       creator: "Himself",
       imgURL: "https://pbs.twimg.com/profile_images/994592419705274369/RLplF55e.jpg",
       type: "Youtube",
-      tags: ["Highest Paid Youtuber", "Entertaining"],
-      subscriberNumber: 90000000
+      tags: ["Highest Paid Youtuber", "Entertaining"]
     },
     {
       id: 2,
@@ -41,8 +38,7 @@ export class AppComponent {
       description: "Gaming youtuber/streamer.",
       creator: "Himself",
       imgURL: "https://celebily.com/wp-content/uploads/2020/04/Tyler1-Bio.jpg",
-      type: "Streamer",
-      subscriberNumber: 2750000
+      type: "Streamer"
     },
     {
       id: 3,
@@ -50,8 +46,7 @@ export class AppComponent {
       description: "Streamer/youtuber gamer.",
       creator: "Himself",
       imgURL: "https://pbs.twimg.com/profile_images/1188911868863221772/fpcyKuIW_400x400.jpg",
-      type: "Streamer",
-      subscriberNumber: 2000000
+      type: "Streamer"
     },
     {
       id: 4,
@@ -60,8 +55,7 @@ export class AppComponent {
       creator: "KSI",
       imgURL: "https://i.pinimg.com/736x/66/c8/a2/66c8a282161e564617bebade6227ca7b.jpg",
       type: "Youtube",
-      tags: ["Group", "UK"],
-      subscriberNumber: 14300000
+      tags: ["Group", "UK"]
     },
     {
       id: 5,
@@ -70,8 +64,7 @@ export class AppComponent {
       creator: "Himself",
       imgURL: "https://yt3.ggpht.com/ytc/AKedOLTUOWf8oIrT8ysdH50UKufolkN-vDK-PekH5LunFA=s900-c-k-c0x00ffffff-no-rj",
       type: "Streamer",
-      tags: ["Rust", "League", "OfflineTV"],
-      subscriberNumber: 421000
+      tags: ["Rust", "League", "OfflineTV"]
     },
     {
       id: 6,
@@ -80,8 +73,7 @@ export class AppComponent {
       creator: "Himself",
       imgURL: "https://www.dexerto.com/wp-content/uploads/2021/09/03/Dexerto-Header-3.jpg",
       type: "Streamer",
-      tags: ["Pro Player", "CSGO", "Valorant", "Warzone"],
-      subscriberNumber: 6800000
+      tags: ["Pro Player", "CSGO", "Valorant", "Warzone"]
     }];
 }
 
