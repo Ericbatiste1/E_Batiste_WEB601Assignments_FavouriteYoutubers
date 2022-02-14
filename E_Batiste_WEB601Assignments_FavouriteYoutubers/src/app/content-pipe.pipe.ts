@@ -7,8 +7,14 @@ import { Content } from './helper-files/content-interface';
 })
 export class ContentPipePipe implements PipeTransform {
 
-  transform(contentItem: Content[]): Content[] {
-    return contentItem.filter(c => c.type != null ? c.type.length != 0 : false);
-  } 
+  transform(contentItem: Content[], type?: string): Content[] {
+    let searchFilter;
+    if(!type){
+      searchFilter = contentItem.filter(item => item.type == "" || item.type == null);
+    }else{
+      searchFilter = contentItem.filter(item => item.type == type);
+    }
+    return searchFilter;
+  }
   }
 

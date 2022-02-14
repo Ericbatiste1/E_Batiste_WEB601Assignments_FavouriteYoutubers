@@ -1,6 +1,6 @@
 <div class="container">
     <div class="title"> <header> {{ contentItem ? contentItem.title : "" }} </header></div> 
-    <div *ngIf="contentItem ? contentItem.imgURL: ''" class="imgURL">
+        <div *ngIf="contentItem ? contentItem.imgURL: ''" class="imgURL">
         <img [src]="contentItem ? contentItem.imgURL: ''" (click)="imageClicked()">
     </div>
     <div class="desc">{{ contentItem ? contentItem.description : "" }} </div> 

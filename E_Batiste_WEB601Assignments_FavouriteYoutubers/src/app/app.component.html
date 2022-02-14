@@ -1,9 +1,21 @@
-<app-content-list *ngFor="let item of coolYoutubers; index as i; first as isFirst" [contentItem]="item"
-    [class.is-first]="isFirst">
+<div class="search">
+    <input type="text" placeholder="Search Here!" #answer>
+    <button (click)="answer.value = searchTitle(answer.value, coolYoutubers)">Search</button>
+    <div [ngClass]="{'true': answer.value == 'Title Found!', 'false': answer.value == 'Title Not Found!'}" [innerHTML]="answer.value"></div>
+</div>
+<br>
 
-    
-</app-content-list>
+<div class="youtube">
+    <app-content-list *ngFor="let item of (coolYoutubers | contentPipe: 'Youtube'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    </app-content-list>
+</div>
 
-<app-content-list
-*ngFor="let item of (coolYoutubers | contentPipe)" [contentItem]="item">
-</app-content-list>
+<div class="streamer">
+    <app-content-list *ngFor="let item of (coolYoutubers | contentPipe: 'Streamer'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    </app-content-list>
+</div>
+
+<div class="none">
+    <app-content-list *ngFor="let item of (coolYoutubers | contentPipe); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    </app-content-list>
+</div>

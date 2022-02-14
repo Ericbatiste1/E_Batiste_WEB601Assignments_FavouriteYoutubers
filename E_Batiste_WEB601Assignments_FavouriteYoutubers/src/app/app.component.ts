@@ -21,7 +21,7 @@ export class AppComponent {
       creator: "Himself",
       imgURL: "https://static.onecms.io/wp-content/uploads/sites/20/2016/12/pewdiepie-435.jpg",
       type: "Youtube",
-      tags: ["GOAT", "1 Subscribers"]
+      tags: ["GOAT", "#1 Subscribers"]
     },
     {
       id: 1,
@@ -63,7 +63,6 @@ export class AppComponent {
       description: "Streamer/youtuber.",
       creator: "Himself",
       imgURL: "https://yt3.ggpht.com/ytc/AKedOLTUOWf8oIrT8ysdH50UKufolkN-vDK-PekH5LunFA=s900-c-k-c0x00ffffff-no-rj",
-      type: "Streamer",
       tags: ["Rust", "League", "OfflineTV"]
     },
     {
@@ -77,5 +76,13 @@ export class AppComponent {
     }];
 }
 
+searchTitle(title: string, coolYoutubers: Content[]): string{
+  for(let content of this.coolYoutubers){
+    if(title == content.title.toLowerCase()){
+      return "Title Found!";
+    }
+  }
+  return "Title Not Found!";
+}
 
 }

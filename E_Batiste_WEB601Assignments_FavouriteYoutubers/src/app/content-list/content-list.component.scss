@@ -8,6 +8,11 @@
     }
     
   }
+
+  .container{
+    margin: 0 auto;
+    text-align: center;
+}
   
   :host.is-first{
     border: 2px solid black;
