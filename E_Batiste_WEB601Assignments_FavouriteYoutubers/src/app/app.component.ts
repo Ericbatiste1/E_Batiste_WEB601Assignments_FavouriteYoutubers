@@ -62,7 +62,6 @@ export class AppComponent {
       title: "hJune",
       description: "Streamer/youtuber.",
       creator: "Himself",
-      imgURL: "https://yt3.ggpht.com/ytc/AKedOLTUOWf8oIrT8ysdH50UKufolkN-vDK-PekH5LunFA=s900-c-k-c0x00ffffff-no-rj",
       tags: ["Rust", "League", "OfflineTV"]
     },
     {
