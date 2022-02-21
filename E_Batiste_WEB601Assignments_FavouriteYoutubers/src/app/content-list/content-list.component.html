@@ -5,6 +5,6 @@
     </div>
     <div class="desc">{{ contentItem ? contentItem.description : "" }} </div> 
     <div class="creator">{{ contentItem ? contentItem.creator : "" }}</div>
-    <div *ngIf="contentItem ? contentItem.type : ''" class="type">Type: {{ contentItem ? contentItem.type : '' }}</div>
-    <div *ngIf="contentItem ? contentItem.tags : ''" class="tags">Tags: {{ contentItem ? contentItem.tags : "" }} </div>
+    <div appHoverAffect styleEffect="underline" *ngIf="contentItem ? contentItem.type : ''" class="type">Type: {{ contentItem ? contentItem.type : '' }}</div>
+    <div *ngIf="contentItem ? contentItem.tags : ''" class="tags" appHoverAffect styleEffect="bold">Tags: {{ contentItem ? contentItem.tags : "" }} </div>
 </div>
