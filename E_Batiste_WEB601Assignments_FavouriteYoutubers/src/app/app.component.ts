@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Content } from './helper-files/content-interface';
 
@@ -10,6 +10,7 @@ import { Content } from './helper-files/content-interface';
 })
 export class AppComponent {
   title = 'Top YouTubers';
+  failedMessage = "";
   @Input() contentItem?: Content;
   coolYoutubers: Content[];
 
@@ -82,6 +83,39 @@ searchTitle(title: string, coolYoutubers: Content[]): string{
     }
   }
   return "Title Not Found!";
+}
+
+
+newYoutuberListItem(addYoutube: Content) {
+  let promiseYT = new Promise((success, fail) => {
+    console.log(this.failedMessage);
+    let pass = true;
+    if(pass) {
+    success(
+      `New Youtuber Added!:
+      Title: ${addYoutube.title}, 
+      ID: ${addYoutube.id}, 
+      Description: ${addYoutube.description},
+      Creator: ${addYoutube.creator},
+      Image URL: ${addYoutube.imgURL},
+      Type: ${addYoutube.type},
+      Tags: ${addYoutube.tags}`);
+    } else {
+      fail("There was an error adding a new YouTuber.");
+      this.failedMessage = "There was an error adding a new YouTuber."
+    }
+  });
+
+  promiseYT
+      .then((successMsg) => console.log(successMsg))
+      .catch((failMessage) => this.failedMessage = failMessage);
+
+if(this.failedMessage != "") {
+  return;
+} else {
+  this.coolYoutubers.push(addYoutube);
+  this.coolYoutubers = [...this.coolYoutubers];
+}
 }
 
 }
