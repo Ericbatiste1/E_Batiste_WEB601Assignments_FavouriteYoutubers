@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Content } from '../helper-files/content-interface';
+import { Youtubers } from '../helper-files/Youtubers';
 
 
 @Component({
@@ -8,16 +8,35 @@ import { Content } from '../helper-files/content-interface';
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
-export class ContentListComponent  {
+export class ContentListComponent implements OnInit {
   title = 'Top YouTubers';
-  @Input() contentItem?: Content;
+  @Input() contentItem?: Youtubers;
 
   constructor() { 
-   
+    this.contentItem = {
+      id: 0,
+      title: "",
+      description: "",
+      creator: "",
+      imgURL: "",
+      type: "",
+      tags: []
+    }
   }
 
-  imageClicked(): void {
-    console.log("ID: ", this.contentItem?.id, ", Title: ", this.contentItem?.title);
+  ngOnInit(): void {
+    
   }
 
-}
+  Clicked(){
+    if(this.contentItem != null){
+      console.log(`Title: '${this.contentItem.title}' \nId: '${this.contentItem.id}'`);
+    }
+  }
+
+  }
+
+
+
+
+

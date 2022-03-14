@@ -1,4 +1,4 @@
-export interface Content {
+export interface Youtubers {
     id: number;
     title: string;
     description: string;

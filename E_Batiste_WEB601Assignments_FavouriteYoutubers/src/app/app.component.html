@@ -1,26 +1,21 @@
-<div class="createContent">
-    <app-create-content (addYoutuberEvent)="newYoutuberListItem($event)"></app-create-content>
-    <div *ngIf="failedMessage != ''" [innerHTML]="failedMessage" class="failed"></div>
-</div>
-
 <div class="search">
     <input type="text" placeholder="Search Here!" #answer>
-    <button (click)="answer.value = searchTitle(answer.value, coolYoutubers)">Search</button>
+    <button (click)="answer.value = searchTitle(answer.value, contentItem)">Search</button>
     <div [ngClass]="{'true': answer.value == 'Title Found!', 'false': answer.value == 'Title Not Found!'}" [innerHTML]="answer.value"></div>
 </div>
 <br>
 
 <div class="youtube">
-    <app-content-list *ngFor="let item of (coolYoutubers | contentPipe: 'Youtube'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    <app-content-list *ngFor="let item of (contentItem | contentPipe: 'Youtube'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
     </app-content-list>
 </div>
 
 <div class="streamer">
-    <app-content-list *ngFor="let item of (coolYoutubers | contentPipe: 'Streamer'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    <app-content-list *ngFor="let item of (contentItem | contentPipe: 'Streamer'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
     </app-content-list>
 </div>
 
 <div class="none">
-    <app-content-list *ngFor="let item of (coolYoutubers | contentPipe); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    <app-content-list *ngFor="let item of (contentItem | contentPipe); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
     </app-content-list>
 </div>
