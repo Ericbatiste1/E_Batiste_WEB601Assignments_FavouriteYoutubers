@@ -2,13 +2,17 @@
     <label>Select an id number to display: <input type="number" #id></label>
     <button (click)="displayYoutuberItem(id.value)">Display Youtuber</button>
 </div>
-<app-content-list [youtuber]="someYoutuber" class="single-item-on-app-component"></app-content-list>
 
 <div class="messages">
     <app-messages>
     </app-messages>
-  </div>
-
+</div>
+<br>
+<div class="modifyContent">
+    <app-modify-content (youtuberEvent)="newYoutuberList($event)" (updateYoutuberEvent)="updateYoutubers($event)">
+    </app-modify-content>
+</div>
+<br>
 
 <div class="search">
     <input type="text" placeholder="Search Here!" #answer>

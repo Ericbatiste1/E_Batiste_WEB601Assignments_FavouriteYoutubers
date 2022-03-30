@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { YoutubersServiceService } from './youtubers-service.service';
+import { YoutubersServiceService } from './services/youtubers-service.service';
 import { Youtubers } from './helper-files/Youtubers';
 
 
@@ -18,7 +18,12 @@ export class AppComponent {
 }
 
 ngOnInit(): void{
-  this.yService.singleYoutuber(1).subscribe(youtuber => this.someYoutuber = youtuber);
+  this.getYoutubers();
+}
+
+getYoutubers(): void{
+  this.yService.getYoutubers().subscribe(youtubersArray => this.someYoutuber = youtubersArray);
+  this.yService.singleYoutuber(0).subscribe(singleYoutuber => this.filteredYoutuber = singleYoutuber);
 }
 
 displayYoutuberItem(id: string): void{
@@ -34,6 +39,19 @@ searchTitle(title: string, coolYoutubers: Youtubers[]): string{
   return "Title Not Found!";
 }
 
+updateYoutubers(contentItem: Youtubers): void{
+  this.yService.updateContent(contentItem).subscribe(() => {
+    console.log("Content has been updated");
+    this.getYoutubers();
+  });
+}
 
+newYoutuberList(newYoutuberChild: Youtubers): void{
+  this.yService.addContent(newYoutuberChild).subscribe(newYoutuberFromServer => {
+    console.log('New Youtuber from the server', newYoutuberFromServer);
+    this.someYoutuber.push(newYoutuberFromServer);
+    this.someYoutuber = [...this.someYoutuber];
+  });
+}
 
 }
