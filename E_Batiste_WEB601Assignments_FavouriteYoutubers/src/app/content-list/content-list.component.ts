@@ -10,6 +10,7 @@ import { Youtubers } from '../helper-files/Youtubers';
 })
 export class ContentListComponent implements OnInit {
   title = 'Top YouTubers';
+  @Input() youtuber?: Youtubers[] = [];
   @Input() contentItem?: Youtubers;
 
   constructor() { 
@@ -18,7 +19,7 @@ export class ContentListComponent implements OnInit {
       title: "",
       description: "",
       creator: "",
-      imgURL: "",
+      imgURL: "", 
       type: "",
       tags: []
     }

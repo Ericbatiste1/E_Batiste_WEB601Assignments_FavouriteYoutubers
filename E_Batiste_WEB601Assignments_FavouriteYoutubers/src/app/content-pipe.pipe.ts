@@ -7,12 +7,12 @@ import { Youtubers } from './helper-files/Youtubers';
 })
 export class ContentPipePipe implements PipeTransform {
 
-  transform(contentItem: Youtubers[], type?: string): Youtubers[] {
+  transform(contentItem: Youtubers[], ytype?: string): Youtubers[] {
     let searchFilter;
-    if(!type){
+    if(!ytype){
       searchFilter = contentItem.filter(item => item.type == "" || item.type == null);
     }else{
-      searchFilter = contentItem.filter(item => item.type == type);
+      searchFilter = contentItem.filter(item => item.type == ytype);
     }
     return searchFilter;
   }

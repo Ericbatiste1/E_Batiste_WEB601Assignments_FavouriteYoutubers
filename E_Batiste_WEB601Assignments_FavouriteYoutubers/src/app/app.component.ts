@@ -10,10 +10,19 @@ import { Youtubers } from './helper-files/Youtubers';
 })
 export class AppComponent {
   title = 'Top YouTubers';
-  @Input() contentItem?: Youtubers;
+  someYoutuber: Youtubers[] = [];
+  filteredYoutuber : Youtubers[] = [];
 
-  constructor() { 
+  constructor(private yService: YoutubersServiceService) { 
    
+}
+
+ngOnInit(): void{
+  this.yService.singleYoutuber(1).subscribe(youtuber => this.someYoutuber = youtuber);
+}
+
+displayYoutuberItem(id: string): void{
+  this.yService.singleYoutuber(parseInt(id)).subscribe(youtuber => this.someYoutuber = youtuber);
 }
 
 searchTitle(title: string, coolYoutubers: Youtubers[]): string{

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
 
 @Component({
-  selector: 'app-app-messages',
+  selector: 'app-messages',
   templateUrl: './app-messages.component.html',
   styleUrls: ['./app-messages.component.scss']
 })
