@@ -24,6 +24,7 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    InMemoryDataService,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{
       dataEncapsulation: false,
       delay: 500
