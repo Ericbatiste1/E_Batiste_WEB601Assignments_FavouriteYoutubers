@@ -9,7 +9,7 @@ import { AppMessagesComponent } from './app-messages/app-messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from './services/in-memory-data.service';
-import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
+import { ModifyContent, ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -18,6 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +28,13 @@ import { MatChipsModule } from '@angular/material/chips';
     ContentPipePipe,
     HoverAffectDirective,
     AppMessagesComponent,
+    ModifyContent,
     ModifyContentComponentComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    InMemoryDataService,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{
       dataEncapsulation: false,
       delay: 500
@@ -43,6 +45,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDialogModule,
     MatFormFieldModule,
     MatCardModule,
+    MatDividerModule,
     MatTabsModule,
     MatChipsModule
   ],

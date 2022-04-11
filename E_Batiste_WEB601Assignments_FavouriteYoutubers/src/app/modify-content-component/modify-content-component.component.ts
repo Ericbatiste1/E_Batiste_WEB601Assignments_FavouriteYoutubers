@@ -3,6 +3,7 @@ import { Youtubers } from '../helper-files/Youtubers';
 import { YoutubersServiceService } from '../services/youtubers-service.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-modify-content',
   templateUrl: './modify-content-component.component.html',
@@ -58,8 +59,7 @@ export class ModifyContentComponentComponent implements OnInit {
   
   @Component({
     selector: 'modify-content',
-    templateUrl: './modify-content.html',
-    styleUrls: ['./modify-content-component.component.scss']
+    templateUrl: 'modify-content.html',
   })
   export class ModifyContent {
     mClose = new EventEmitter();
@@ -87,6 +87,7 @@ export class ModifyContentComponentComponent implements OnInit {
         console.log(this.data);
       });
     }
+    
 
   }
 
