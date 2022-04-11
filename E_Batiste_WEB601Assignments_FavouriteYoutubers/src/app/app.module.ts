@@ -19,6 +19,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
+import { ListComponent } from './list/list.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { YoutuberDetailComponent } from './youtuber-detail/youtuber-detail.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { RouterModule } from '@angular/router';
+
+
 
 
 @NgModule({
@@ -30,6 +40,9 @@ import { MatDividerModule } from '@angular/material/divider';
     AppMessagesComponent,
     ModifyContent,
     ModifyContentComponentComponent,
+    ListComponent,
+    NotFoundComponent,
+    YoutuberDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +60,12 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatDividerModule,
     MatTabsModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatGridListModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,7 +18,7 @@ export class YoutubersServiceService {
 
    }
 
-  singleYoutuber(id: number):Observable<Youtubers[]>{
+  singleYoutuber(id: number): Observable<Youtubers[]>{
     let youtuber = YOUTUBERSLIST.filter(youtuber => youtuber.id == id);
     this.messageService.addMsg(`ID: ${id} has been loaded.`);
     return of(youtuber);
@@ -33,8 +33,8 @@ export class YoutubersServiceService {
     return this.http.post<Youtubers>("api/youtuberList", newContentItem, this.httpOptions);
   }
 
-  getYoutubers(): Observable<Youtubers[]>{
-    return this.http.get<Youtubers[]>("api/youtuberList");
+  getYoutubers(id?: number): Observable<Youtubers[]>{
+    return this.http.get<Youtubers[]>("api/youtuberList/" + id);
   }
 
 }

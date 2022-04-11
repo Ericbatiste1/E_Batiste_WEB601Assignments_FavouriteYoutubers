@@ -1,0 +1,20 @@
+<h1>{{ youtubers ? youtubers.title : "" }}</h1>
+
+<div class="container">
+    <div class="desc">{{ youtubers ? youtubers.description : "" }} </div>
+    <div class="creator">{{ youtubers ? youtubers.creator : "" }}</div>
+
+    <div appHoverAffect styleType="underline" *ngIf="youtubers ? youtubers.type : ''" class="type">
+        Type: {{ youtubers ? youtubers.type : '' }}
+    </div>
+
+    <div *ngIf="youtubers?.tags" class="tags">
+        <mat-chip-list aria-label="youtubers tags" *ngFor="let tag of youtubers?.tags">
+            <mat-chip>#{{tag}}</mat-chip>
+        </mat-chip-list>
+    </div>
+    <div class="button">
+        <button mat-raised-button color="primary"><a routerLink="/list" routerLinkActive="active">Back to List</a></button>
+    </div>
+    <img mat-card-image [src]="youtubers?.imgURL != null ? youtubers?.imgURL : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Flogos-world.net%2Fyoutube-logo%2F&psig=AOvVaw1AKDDgTxxLPuLtHEPMKyU1&ust=1649730779784000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJD9uJz8ivcCFQAAAAAdAAAAABAD'" (click)="clicked()">
+</div>

@@ -1,0 +1,43 @@
+<div>
+    <label>Select an id number to display: <input type="number" #id></label>
+    <button (click)="displayYoutuberItem(id.value)" mat-raised-button color="primary">Display Youtuber</button>
+</div>
+
+<div class="messages">
+    <app-messages>
+    </app-messages>
+</div>
+<br>
+<div class="modifyContent">
+    <app-modify-content (youtuberEvent)="newYoutuberList($event)" (updateYoutuberEvent)="updateYoutubers($event)">
+    </app-modify-content>
+</div>
+<br>
+
+<div class="search">
+    <input type="text" placeholder="Search Here!" #answer>
+    <button (click)="answer.value = searchTitle(answer.value, someYoutuber)" mat-raised-button color="primary">Search</button>
+    <div [ngClass]="{'true': answer.value == 'Title Found!', 'false': answer.value == 'Title Not Found!'}" [innerHTML]="answer.value"></div>
+</div>
+
+<br>
+
+<div class="youtuberID" *ngIf="filteredYoutuber.length">
+    <app-content-list *ngFor="let item of (filteredYoutuber); index as i; first as isLone;" [contentItem]="item" [class.isLone]="isLone">
+    </app-content-list>
+  </div>
+
+<div class="youtube">
+    <app-content-list *ngFor="let item of (someYoutuber | contentPipe: 'Youtube'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    </app-content-list>
+</div>
+
+<div class="streamer">
+    <app-content-list *ngFor="let item of (someYoutuber | contentPipe: 'Streamer'); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    </app-content-list>
+</div>
+
+<div class="none">
+    <app-content-list *ngFor="let item of (someYoutuber | contentPipe); index as i; first as isFirst;" [contentItem]="item" [class.isFirst]="isFirst">
+    </app-content-list>
+</div>

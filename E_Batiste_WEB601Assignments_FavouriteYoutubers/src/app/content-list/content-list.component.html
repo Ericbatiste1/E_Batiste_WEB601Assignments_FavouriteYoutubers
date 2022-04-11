@@ -1,10 +1,20 @@
-<div class="container">
-    <div class="title"> <header> {{ contentItem ? contentItem.title : "" }} </header></div> 
-        <div *ngIf="contentItem" class="imgURL">
-        <img [src]="contentItem.imgURL != null ? contentItem.imgURL : 'https://steamuserimages-a.akamaihd.net/ugc/885384897182110030/F095539864AC9E94AE5236E04C8CA7C2725BCEFF/'" (click)="Clicked()">
-    </div>
-    <div class="desc">{{ contentItem ? contentItem.description : "" }} </div> 
-    <div class="creator">{{ contentItem ? contentItem.creator : "" }}</div>
-    <div appHoverAffect styleEffect="underline" *ngIf="contentItem ? contentItem.type : ''" class="type">Type: {{ contentItem ? contentItem.type : '' }}</div>
-    <div *ngIf="contentItem ? contentItem.tags : ''" class="tags" appHoverAffect styleEffect="bold">Tags: {{ contentItem ? contentItem.tags : "" }} </div>
-</div>
+<mat-card class="container youtuber-{{contentItem?.id}}">
+    <mat-card-header>
+        <mat-card-title>{{ contentItem ? contentItem.title : "" }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="creator">{{ contentItem ? contentItem.creator : "" }}</div>
+
+        <div appHoverAffect styleType="underline" *ngIf="contentItem ? contentItem.type : ''" class="type">
+            Type: {{ contentItem ? contentItem.type : '' }}
+        </div>
+
+        <div *ngIf="contentItem?.tags" class="tags">
+            <mat-chip-list aria-label="contentItem tags" *ngFor="let tag of contentItem?.tags">
+                <mat-chip>#{{tag}}</mat-chip>
+            </mat-chip-list>
+        </div>
+    </mat-card-content>
+    <img mat-card-image [src]="contentItem?.imgURL != null ? contentItem?.imgURL : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Flogos-world.net%2Fyoutube-logo%2F&psig=AOvVaw1AKDDgTxxLPuLtHEPMKyU1&ust=1649730779784000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJD9uJz8ivcCFQAAAAAdAAAAABAD'" (click)="clicked()">
+    <button mat-raised-button color="primary"><a routerLink="/list/{{contentItem?.id}}" routerLinkActive="active">Details</a></button>
+</mat-card>

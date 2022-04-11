@@ -29,7 +29,7 @@ export class ContentListComponent implements OnInit {
     
   }
 
-  Clicked(){
+  clicked(){
     if(this.contentItem != null){
       console.log(`Title: '${this.contentItem.title}' \nId: '${this.contentItem.id}'`);
     }
