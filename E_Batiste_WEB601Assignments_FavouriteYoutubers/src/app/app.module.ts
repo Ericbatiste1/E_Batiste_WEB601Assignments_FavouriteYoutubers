@@ -27,6 +27,10 @@ import { YoutuberDetailComponent } from './youtuber-detail/youtuber-detail.compo
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LogUpdateService } from './services/log-update.service';
 
 
 
@@ -65,9 +69,15 @@ import { RouterModule } from '@angular/router';
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
-    RouterModule
+    RouterModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
-  providers: [],
+  providers: [LogUpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

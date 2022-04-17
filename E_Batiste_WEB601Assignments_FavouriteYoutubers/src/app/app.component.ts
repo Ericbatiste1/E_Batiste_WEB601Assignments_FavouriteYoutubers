@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { YoutubersServiceService } from './services/youtubers-service.service';
 import { Youtubers } from './helper-files/Youtubers';
+import { LogUpdateService } from './services/log-update.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class AppComponent {
   someYoutuber: Youtubers[] = [];
   filteredYoutuber : Youtubers[] = [];
 
-  constructor(private yService: YoutubersServiceService) { 
+  constructor(private logService: LogUpdateService) { 
    
 }
 
